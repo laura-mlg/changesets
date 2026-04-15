@@ -1,0 +1,59 @@
+config_version = "0"
+
+exclude_patterns = [
+  "**/node_modules/**",
+  "**/dist/**",
+  "**/*.d.ts",
+]
+
+test_patterns = [
+  "**/*.test.*",
+  "**/*.spec.*",
+  "**/__tests__/**",
+]
+
+[smells]
+mode = "comment"
+
+[[source]]
+name = "default"
+default = true
+
+[[plugin]]
+name = "eslint"
+mode = "comment"
+config_files = [".eslintrc"]
+extra_packages = [
+  "@typescript-eslint/parser@5.62.0",
+  "@typescript-eslint/eslint-plugin@5.62.0",
+  "eslint-config-standard@17.1.0",
+  "eslint-plugin-standard@5.0.0",
+]
+
+[[plugin]]
+name = "prettier"
+mode = "comment"
+
+[[plugin]]
+name = "knip"
+mode = "monitor"
+
+[[plugin]]
+name = "trufflehog"
+mode = "block"
+
+[[plugin]]
+name = "osv-scanner"
+mode = "block"
+
+[[plugin]]
+name = "markdownlint"
+mode = "comment"
+
+[[plugin]]
+name = "actionlint"
+mode = "comment"
+
+[[plugin]]
+name = "yamllint"
+mode = "comment"
